@@ -4,23 +4,23 @@ window.addEventListener('DOMContentLoaded', init);
 
 function init() {
 
-  function handleVolChange(Event){
-
-    const volumeLevel = Event.target.value;
-    const volPic = document.getElementById('volume-controls').getElementsByTagName("img").src;
-
-    if(volumeLevel == 0){
-      volPic = "volume-level-0.svg";
-    }else if(volumeLevel < 33){
-      volPic = "volume-level-1.svg";
-    }else if(volumeLevel < 67){
-      volPic = "volume-level-2.sng";
+  const volPic = document.getElementById("volume-controls").getElementsByTagName("img");
+  const volSlider = document.getElementById("volume");
+  volSlider.onchange = () => {
+ 
+    if(volSlider.value == 0){
+      volPic.src = "assets/icons/volume-level-0.svg";
+    }else if(volSlider.value < 33){
+      volPic.src = "assets/icons/volume-level-1.svg";
+    }else if(volSlider.value < 67){
+      volPic.src = "assets/icons/volume-level-2.svg";
     }else{
-      volPic = "volume-level-3.svg";
+      volPic.src = "assets/icons/volume-level-3.svg";
     }
+
+    console.log(volPic.src)
   }
 
 }
 
-const volSlider = document.getElementById('volume');
-volSlider.addEventListener('change', handleVolChange);
+
