@@ -4,10 +4,14 @@ window.addEventListener('DOMContentLoaded', init);
 
 function init() {
 
-  const volPic = document.getElementById("volume-controls").getElementsByTagName("img");
   const volSlider = document.getElementById("volume");
-  volSlider.onchange = () => {
- 
+  volSlider.addEventListener('change', handleVolChange)
+
+  function handleVolChange(Event){
+    const volume = Event.target.valueAsNumber;
+    let elements = document.querySelectorAll('#volume-controls > img');
+    const volPic = elements[0]
+
     if(volSlider.value == 0){
       volPic.src = "assets/icons/volume-level-0.svg";
     }else if(volSlider.value < 33){
@@ -18,9 +22,9 @@ function init() {
       volPic.src = "assets/icons/volume-level-3.svg";
     }
 
-    console.log(volPic.src)
+    
   }
-
+  
 }
 
 
