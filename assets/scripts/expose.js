@@ -9,8 +9,7 @@ function init() {
 
   function handleVolChange(Event){
     const volume = Event.target.valueAsNumber;
-    let elements = document.querySelectorAll('#volume-controls > img');
-    const volPic = elements[0]
+    let volPic = document.querySelectorAll('#volume-controls > img')[0];
 
     if(volSlider.value == 0){
       volPic.src = "assets/icons/volume-level-0.svg";
