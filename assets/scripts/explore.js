@@ -46,7 +46,6 @@ function init() {
 
   function handleTxtInput(Event){
     const spokenText = Event.target.value;
-    console.log(spokenText);
     utterThis = new SpeechSynthesisUtterance(spokenText);
   }
 
