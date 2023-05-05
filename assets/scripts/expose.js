@@ -5,11 +5,11 @@ window.addEventListener('DOMContentLoaded', init);
 function init() {
 
   const volSlider = document.getElementById("volume");
-  volSlider.addEventListener('change', handleVolChange)
+  volSlider.addEventListener('input', handleVolChange)
 
   function handleVolChange(Event){
     const volume = Event.target.valueAsNumber;
-    let volPic = document.querySelectorAll('#volume-controls > img')[0];
+    let volPic = document.querySelector('#volume-controls > img');
 
     if(volSlider.value == 0){
       volPic.src = "assets/icons/volume-level-0.svg";
